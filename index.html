@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniTask Pro - จดงานตามคณะ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>✨ UniTask Pro ✨</h1>
+            <p>พิมพ์ชื่อวิชาและคณะของคุณได้เองเลย!</p>
+        </header>
+        
+        <div class="input-card">
+            <div class="input-group">
+                <input type="text" id="subjectName" placeholder="ชื่อวิชา (เช่น AI, บัญชี, ดีไซน์)">
+                <input type="text" id="taskName" placeholder="รายละเอียดงานที่ต้องส่ง">
+                <input type="date" id="dueDate">
+                <button onclick="addTask()">บันทึกงานใหม่ ✨</button>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2>📜 รายการงานที่รอส่ง</h2>
+            <div id="taskList"></div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
