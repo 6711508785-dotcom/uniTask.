@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniTask Pro - จดงานตามคณะ</title>
+    <title>UniTask Pro - ระบบเตือนงานสุดคิวท์</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,20 +12,44 @@
     <div class="app-container">
         <header class="app-header">
             <h1>✨ UniTask Pro ✨</h1>
-            <p>พิมพ์ชื่อวิชาและคณะของคุณได้เองเลย!</p>
+            <p>ระบบจัดการงานส่ง และแจ้งเตือนผ่าน LINE</p>
         </header>
-        
+
+        <div class="dashboard">
+            <div class="stat-card">
+                <span id="totalTasks">0</span>
+                <p>งานทั้งหมด</p>
+            </div>
+            <div class="stat-card">
+                <span id="pendingTasks">0</span>
+                <p>ยังไม่เสร็จ</p>
+            </div>
+        </div>
+
         <div class="input-card">
             <div class="input-group">
                 <input type="text" id="subjectName" placeholder="ชื่อวิชา (เช่น AI, บัญชี, ดีไซน์)">
                 <input type="text" id="taskName" placeholder="รายละเอียดงานที่ต้องส่ง">
                 <input type="date" id="dueDate">
-                <button onclick="addTask()">บันทึกงานใหม่ ✨</button>
+                
+                <div class="category-selector">
+                    <p style="font-size: 0.8rem; margin: 5px 0;">ประเภทงานหลักสูตร:</p>
+                    <div class="category-options">
+                        <label><input type="radio" name="category" value="📖 GE" checked><span class="cat-btn">📖 GE</span></label>
+                        <label><input type="radio" name="category" value="💻 Core"><span class="cat-btn">💻 Core</span></label>
+                        <label><input type="radio" name="category" value="🎓 Educ"><span class="cat-btn">🎓 Educ</span></label>
+                        <label><input type="radio" name="category" value="🎨 Elect"><span class="cat-btn">🎨 Elect</span></label>
+                    </div>
+                </div>
+
+                <button id="addBtn" onclick="addTask()">บันทึกงานใหม่ ✨</button>
             </div>
         </div>
 
         <div class="task-section">
-            <h2>📜 รายการงานที่รอส่ง</h2>
+            <div class="filter-group">
+                <button class="filter-btn active">งานทั้งหมด</button>
+            </div>
             <div id="taskList"></div>
         </div>
     </div>
